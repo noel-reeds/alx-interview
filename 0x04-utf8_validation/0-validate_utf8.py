@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""checks for a valid utf8"""
 
 def validUTF8(data):
         # Number of bytes in the current UTF-8 character
