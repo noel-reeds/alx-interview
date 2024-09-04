@@ -24,7 +24,7 @@ GeeksforGeeks Articles:
    - [Python Multi-dimensional Arrays:](https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/) A guide to working with 2D arrays in Python effectively.
 
 TutorialsPoint:  
-    - [Python Lists:](https://www.tutorialspoint.com/python/python_lists.htm)Explains how to create, access, and manipulate lists in Python, which is essential for working with a grid.  
+   - [Python Lists:](https://www.tutorialspoint.com/python/python_lists.htm)Explains how to create, access, and manipulate lists in Python, which is essential for working with a grid.  
 
 YouTube Tutorials:  
-    - [Python 2D arrays and lists](https://www.youtube.com/watch?feature=shared&v=aNzepGawwCI)
+   - [Python 2D arrays and lists](https://www.youtube.com/watch?feature=shared&v=aNzepGawwCI)
