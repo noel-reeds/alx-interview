@@ -15,7 +15,9 @@ def isWinner(nums):
             n += m
         m += 1
     var = 2
+    prime = []
     while var <= num:
         if prime_nums[var]:
-            print(var, end=" ")
+            prime.append(var)
         var += 1
+    return prime
