@@ -2,25 +2,16 @@
 """prime game module"""
 
 
-def sieve_of_eratosthenes(num):
-    """returns name of the player that won the most rounds
-    sieve prime numbers from the nums array."""
-    if num < 2:
-        return []
-
-    prime_nums = [True for _ in range(num+1)]
-    prime_nums[0] = prime_nums[1] = False
-
-    m = 2
-    while m * m <= num:
-        n = m * m
-        while n <= num:
-            prime_nums[n] = False
-            n += m
-        m += 1
-    prime = [x for x in range(2, num + 1) if prime_nums[x]]
-    return prime
-
+def sieve_of_eratosthenes(max_n):
+    is_prime = [True] * (max_n + 1)
+    is_prime[0] = is_prime[1] = False
+    
+    for i in range(2, int(max_n ** 0.5) + 1):
+        if is_prime[i]:
+            for j in range(i * i, max_n + 1, i):
+                is_prime[j] = False
+                
+    return is_prime
 
 def game(n, prime_nums):
     prime_numbers = [num for num in range(n + 1) if prime_nums[num]]
@@ -28,7 +19,6 @@ def game(n, prime_nums):
 
     while prime_numbers:
         chosen = prime_numbers.pop(0)
-        print(f"Chosen prime: {chosen}")
         prime_numbers = [m for m in prime_numbers if m % chosen != 0]
         turn = 1 - turn
 
