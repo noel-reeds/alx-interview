@@ -2,16 +2,18 @@
 """prime game module"""
 
 
-def sieve_of_eratosthenes(max_n):
+def sieve_of_eratosthenes(num):
     """returns prime_nums"""
-    is_prime = [True] * (max_n + 1)
-    is_prime[0] = is_prime[1] = False
-    for i in range(2, int(max_n ** 0.5) + 1):
-        if is_prime[i]:
-            for j in range(i * i, max_n + 1, i):
-                is_prime[j] = False
+    if num < 2:
+        return []
+    prime = [True] * (num + 1)
+    prime[0] = prime[1] = False
+    for i in range(2, int(num ** 0.5) + 1):
+        if prime[i]:
+            for j in range(i * i, num + 1, i):
+                prime[j] = False
 
-    return is_prime
+    return prime
 
 
 def game(n, prime_nums):
@@ -29,7 +31,11 @@ def game(n, prime_nums):
 
 def isWinner(x, nums):
     """returns winner"""
-    num = max(nums)
+    if x == 0 or not nums:
+        return None
+    num = max(nums) if nums else 0
+    if num < 2:
+        return None
     prime_nums = sieve_of_eratosthenes(num)
 
     Maria = 0
