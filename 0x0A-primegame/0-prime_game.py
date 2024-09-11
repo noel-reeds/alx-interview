@@ -3,6 +3,7 @@
 
 
 def sieve_of_eratosthenes(max_n):
+    """returns prime_nums"""
     is_prime = [True] * (max_n + 1)
     is_prime[0] = is_prime[1] = False
     for i in range(2, int(max_n ** 0.5) + 1):
@@ -14,6 +15,7 @@ def sieve_of_eratosthenes(max_n):
 
 
 def game(n, prime_nums):
+    """determines winner"""
     prime_numbers = [num for num in range(n + 1) if prime_nums[num]]
     turn = 0
 
@@ -26,6 +28,7 @@ def game(n, prime_nums):
 
 
 def isWinner(x, nums):
+    """returns winner"""
     num = max(nums)
     prime_nums = sieve_of_eratosthenes(num)
 
