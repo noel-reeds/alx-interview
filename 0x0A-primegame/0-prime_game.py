@@ -31,7 +31,7 @@ def game(n, prime_nums):
 
 def isWinner(x, nums):
     """returns winner"""
-    if x == 0 or not nums:
+    if x == 0:
         return None
     num = max(nums) if nums else 0
     if num < 2:
