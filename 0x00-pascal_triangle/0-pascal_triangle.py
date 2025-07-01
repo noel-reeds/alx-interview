@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Returns a list of lists of integers rep a Pascals Tri"""
 
+
 def pascal_triangle(n):
     # n represents number of rows in a triangle
     # return an empty list if n <= 0
