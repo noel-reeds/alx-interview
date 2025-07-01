@@ -24,6 +24,6 @@ def pascal_triangle(n):
                     num2 = prev_list[index]
                     co_num = num1 + num2
                     inner_list.append(co_num)
-                    index = index + 1
+                index = index + 1
             list_of_lists.append(inner_list)
         return list_of_lists
