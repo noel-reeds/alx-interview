@@ -3,6 +3,7 @@
 
 
 def pascal_triangle(n):
+    """Pascals Triangle function definition"""
     # n represents number of rows in a triangle
     # return an empty list if n <= 0
     if n <= 0:
