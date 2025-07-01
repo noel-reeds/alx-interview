@@ -8,13 +8,22 @@ def pascal_triangle(n):
         return []
     else:
         # create a list of lists and append inner lists
-        pascals_triangle = []
+        list_of_lists = []
         for row in range(n):
             # create inner lists and append elements
-            m = 0
+            index = 0
             inner_list = []
-            while m < row:
-                if m == 0 or m == n:
+            while index <= row:
+                if index == 0 or index == row:
+                    # first or last element of the row
                     inner_list.append(1)
                 else:
-                    pass
+                    # rest of the elements
+                    prev_list = list_of_lists[row - 1]
+                    num1 = prev_list[index - 1]
+                    num2 = prev_list[index]
+                    co_num = num1 + num2
+                    inner_list.append(co_num)
+                    index = index + 1
+            list_of_lists.append(inner_list)
+        return list_of_lists
