@@ -11,15 +11,17 @@ def canUnlockAll(boxes):
     if len(boxes[0]) < 1:
         return False
     # otherwise retrieve keys
-    open_boxes = [0]
+    opened = [0]
     for box in range(len(boxes)):
-        if box in open_boxes:
+        if box in opened:
             # append keys in current box
-            open_boxes.extend([m for m in boxes[box] if m not in open_boxes])
+            opened.extend([m for m in boxes[box] if m not in opened])
             for keys in range(len(boxes[box])):
                 m = boxes[box][keys]
-                # append keys in subsequent boxes
-                open_boxes.extend([x for x in boxes[m] if x not in open_boxes])
+                # check if index m is within range of boxes
+                if m < len(boxes):
+                    # append keys in subsequent boxes
+                    opened.extend([x for x in boxes[m] if x not in opened])
     # check opened boxes against all boxes
-    res = all(m in open_boxes for m in range(len(boxes)))
+    res = all(m in opened for m in range(len(boxes)))
     return res
